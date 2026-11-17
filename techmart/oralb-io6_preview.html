@@ -1,0 +1,78 @@
+<!-- Oral-B iO6 Black Lava, rich content за techmart.bg
+ Снимки (номер, файл OB_Majestic_IO6_Black_Lava_RC_Premium_BG_Desktop_..., секция):
+  01  Module_1  Hero, Ken Burns + отблясък
+  02  module_2  Приложение
+  03  module_3  Таймер, сензор, дисплей
+  04  module_4  5 режима, приложение, батерия
+  05  module_5_1  Интерактивен дисплей
+  06  module_5_2  Сензор и 5 режима
+  07  module_6_1  Слайдер 1/5 iO технология
+  08  module_6_2  Слайдер 2/5 накрайници
+  09  module_6_3  Слайдер 3/5 смяна на накрайник
+  10  module_6_4  Слайдер 4/5 серията iO
+  11  module_6_5  Слайдер 5/5 избери iO
+  12  module_7  Сравнителна таблица
+-->
+<div class="oio6">
+<style>
+/* НАСТРОЙКИ */
+.oio6{--oio6-gap:0px;--oio6-slide:5s;--oio6-bg:#0b3d91;--oio6-radius:0px;--oio6-rise:48px}
+/* ОСНОВА */
+.oio6{max-width:1464px;margin:0 auto;font-family:inherit;line-height:0}
+.oio6 .s{position:relative;overflow:hidden;aspect-ratio:61/25;background:var(--oio6-bg);margin:0 0 var(--oio6-gap);border-radius:var(--oio6-radius)}
+.oio6 .s img{display:block;width:100%;height:100%;object-fit:cover;max-width:none;border:0}
+/* 01 HERO */
+.oio6 .hero img{animation:oio6-kb 9s cubic-bezier(.2,.6,.2,1) both;transform-origin:20% 40%}
+.oio6 .hero .shine{position:absolute;top:0;left:-60%;width:40%;height:100%;font-size:0;line-height:0;pointer-events:none;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.28) 50%,rgba(255,255,255,0) 100%);transform:skewX(-18deg);animation:oio6-shine 6s ease-in-out 1.2s infinite}
+@keyframes oio6-kb{from{transform:scale(1.09)}to{transform:scale(1)}}
+@keyframes oio6-shine{0%{left:-60%}30%{left:130%}100%{left:130%}}
+/* ПОЯВА ПРИ СКРОЛ (Chrome, Edge, Safari 26+; другаде секциите са просто видими) */
+@supports (animation-timeline:view()){
+.oio6 .rv{animation:oio6-up linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+.oio6 .rv img{animation:oio6-zoom linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+}
+@keyframes oio6-up{from{opacity:0;transform:translateY(var(--oio6-rise)) scale(.97)}to{opacity:1;transform:none}}
+@keyframes oio6-zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+/* 07-11 СЛАЙДЕР (5 кадъра) */
+.oio6 .car .sl{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;animation:oio6-fade calc(var(--oio6-slide)*5) linear infinite}
+.oio6 .car .sl img{animation:oio6-drift calc(var(--oio6-slide)*5) linear infinite}
+.oio6 .car .sl1,.oio6 .car .sl1 img{animation-delay:calc(var(--oio6-slide)*-0.2)}
+.oio6 .car .sl2,.oio6 .car .sl2 img{animation-delay:calc(var(--oio6-slide)*0.8)}
+.oio6 .car .sl3,.oio6 .car .sl3 img{animation-delay:calc(var(--oio6-slide)*1.8)}
+.oio6 .car .sl4,.oio6 .car .sl4 img{animation-delay:calc(var(--oio6-slide)*2.8)}
+.oio6 .car .sl5,.oio6 .car .sl5 img{animation-delay:calc(var(--oio6-slide)*3.8)}
+@keyframes oio6-fade{0%{opacity:0}2.4%{opacity:1}20%{opacity:1}22.4%{opacity:0}100%{opacity:0}}
+@keyframes oio6-drift{0%{transform:scale(1.06)}22.4%{transform:scale(1)}100%{transform:scale(1)}}
+.oio6 .dots{position:absolute;left:0;right:0;bottom:3%;text-align:center;line-height:0;z-index:3}
+.oio6 .dots .dot{display:inline-block;width:10px;height:10px;margin:0 5px;border-radius:10px;font-size:0;line-height:0;background:rgba(255,255,255,.45);animation:oio6-dot calc(var(--oio6-slide)*5) linear infinite}
+.oio6 .dots .d1{animation-delay:calc(var(--oio6-slide)*-0.2)}
+.oio6 .dots .d2{animation-delay:calc(var(--oio6-slide)*0.8)}
+.oio6 .dots .d3{animation-delay:calc(var(--oio6-slide)*1.8)}
+.oio6 .dots .d4{animation-delay:calc(var(--oio6-slide)*2.8)}
+.oio6 .dots .d5{animation-delay:calc(var(--oio6-slide)*3.8)}
+@keyframes oio6-dot{0%{width:10px;background:rgba(255,255,255,.45)}2.4%{width:30px;background:#fff}20%{width:30px;background:#fff}22.4%{width:10px;background:rgba(255,255,255,.45)}100%{width:10px;background:rgba(255,255,255,.45)}}
+.oio6 .car:hover .sl,.oio6 .car:hover .sl img,.oio6 .car:hover .dot{animation-play-state:paused}
+/* БЕЗ АНИМАЦИИ при намалено движение */
+@media (prefers-reduced-motion:reduce){
+.oio6 .hero img,.oio6 .hero .shine,.oio6 .rv,.oio6 .rv img,.oio6 .car .sl,.oio6 .car .sl img,.oio6 .dots .dot{animation:none}
+.oio6 .hero .shine{display:none}
+.oio6 .car .sl1{opacity:1}
+.oio6 .dots{display:none}
+}
+</style>
+<div class="s hero"><!-- 01 --><img class="" src="oralb-io6/01.jpg" alt="01 Oral-B iO6 Персонален асистент: клинично тествана, предотвратете проблемите, преди да се появят" width="1464" height="600" loading="eager" referrerpolicy="no-referrer" /><b class="shine">&nbsp;</b></div>
+<div class="s rv"><!-- 02 --><img class="" src="oralb-io6/02.jpg" alt="02 Свързаното приложение Oral-B ви напътства, за да не пропуснете нито една зона" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="s rv"><!-- 03 --><img class="" src="oralb-io6/03.jpg" alt="03 2-минутен таймер, синхронизиран с Apple Health, сензор за натиск и интерактивен дисплей" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="s rv"><!-- 04 --><img class="" src="oralb-io6/04.jpg" alt="04 Лесен избор между 5 почистващи режима, напътствия от приложението за всяка зона и дълго издържаща батерия" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="s rv"><!-- 05 --><img class="" src="oralb-io6/05.jpg" alt="05 Интерактивен дисплей: видими таймер за миене, режими и ниво на батерията" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="s rv"><!-- 06 --><img class="" src="oralb-io6/06.jpg" alt="06 Сензор за натиск, който предпазва венците, и 5 почистващи режима: ежедневна грижа, интензивна грижа, чувствителни зъби, грижа за венците, белота" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="s rv car">
+<div class="sl sl1"><!-- 07 --><img class="" src="oralb-io6/07.jpg" alt="07 iO технология: хиляди индивидуално задвижвани влакънца и кръгла глава, която се адаптира към всеки зъб" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="sl sl2"><!-- 08 --><img class="" src="oralb-io6/08.jpg" alt="08 Персонализирай своето почистване: накрайници, съвместими с всички iO дръжки" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="sl sl3"><!-- 09 --><img class="" src="oralb-io6/09.jpg" alt="09 Стоматолозите препоръчват смяна на накрайника на всеки 3 месеца" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="sl sl4"><!-- 10 --><img class="" src="oralb-io6/10.jpg" alt="10 Перфектното почистване започва с Oral-B: серията iO" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="sl sl5"><!-- 11 --><img class="" src="oralb-io6/11.jpg" alt="11 Избери подходящата iO за теб: iO2, iO3, iO5, iO6, iO9, iO10" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+<div class="dots"><b class="dot d1">&nbsp;</b><b class="dot d2">&nbsp;</b><b class="dot d3">&nbsp;</b><b class="dot d4">&nbsp;</b><b class="dot d5">&nbsp;</b></div>
+</div>
+<div class="s rv"><!-- 12 --><img class="" src="oralb-io6/12.jpg" alt="12 Сравнение на моделите Oral-B iO2, iO3, iO5, iO6, iO9 и iO10" width="1464" height="600" loading="lazy" referrerpolicy="no-referrer" /></div>
+</div>
